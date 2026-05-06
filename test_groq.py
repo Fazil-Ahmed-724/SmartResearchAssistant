@@ -17,7 +17,7 @@ chat_completion = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": "Explain why Groq is so fast.",
+            "content": "What's the weather in Karachi on 2023-10-01?",
         }
     ],
     model="openai/gpt-oss-20b",

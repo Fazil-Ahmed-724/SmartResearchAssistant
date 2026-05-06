@@ -1,0 +1,13 @@
+# Add the necessary dependencies for the project
+# Example dependencies:
+requests
+beautifulsoup4
+duckduckgo-search
+google-genai
+langchain
+langchain-community
+langchain-google-genai
+langchain-huggingface
+openai
+pytest
+python-dotenv
