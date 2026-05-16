@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_community.utilities import GoogleSerperAPIWrapper
 from langchain.agents import create_agent
+from langgraph.checkpoint.memory import InMemorySaver
     
 
 # Load environment variables from .env file
@@ -34,6 +35,8 @@ agent = create_agent(
     model=llm,
     tools=[search.run],
     system_prompt="You are a helpful assistant that can perform Google searches to answer user queries.",
+    checkpointer=InMemorySaver(),
+
 )
 while True:
     question = input("Enter your question (or 'exit' to quit): ")
@@ -45,6 +48,8 @@ while True:
             "messages": [
                 {"role": "user", "content": question},
             ]
-        }
+        },
+        {"configurable": {"thread_id": "1"}},
+
     )
     print(response["messages"][-1].content)

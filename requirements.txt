@@ -4,6 +4,7 @@ langchain-groq
 langchain
 langchain-community
 langchain-core
+langgraph
 langchain-google-genai
 langchain-huggingface
 python-dotenv
